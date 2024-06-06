@@ -8,6 +8,15 @@
         Loaded="Window_Loaded"
         Title="MainWindow" Height="450" Width="800" ResizeMode="NoResize">
     <Canvas Name="canvas">
-        <Button Content="Throw" FontSize="40" Grid.Column="2" Grid.RowSpan="2" Grid.Row="3" Canvas.Left="343" Canvas.Top="342" HorizontalAlignment="Left" VerticalAlignment="Center" Width="134"/>
+        <Button Content="Throw" 
+                FontSize="40"
+                Grid.Column="2" 
+                Grid.RowSpan="2" 
+                Grid.Row="3" 
+                Canvas.Left="343" 
+                Canvas.Top="342" 
+                HorizontalAlignment="Left" 
+                VerticalAlignment="Center" 
+                Width="134" Click="Button_Click"/>
     </Canvas>
 </Window>

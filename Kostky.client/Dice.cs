@@ -37,7 +37,7 @@ namespace Kostky.server
                     Height = 50,
                     Fill = Brushes.Black,
                     Stroke = Brushes.Black,
-                    Name = $"El{i}"
+                    Name = $"El{i+1}"
                 };
                 switch (i)
                 {
@@ -74,22 +74,48 @@ namespace Kostky.server
                 canvas.Children.Add(ellipse);
             }
         }
-        public static void Throw()
+        public static void Throw(Canvas canvas, Random random)
         {
-            /*Ellipse el1 = ellipses[0];
-            Ellipse el2 = ellipses[1];
-            Ellipse el3 = ellipses[2];
-            Ellipse el4 = ellipses[3];
-            Ellipse el5 = ellipses[4];
-            Ellipse el6 = ellipses[5];
-            Ellipse el7 = ellipses[6];*/
-            Random random = new();
-            switch (random.Next(1, 6))
+            int rand = random.Next(1, 7);
+            for (int i = 0; i < 6; i++)
             {
-                case 1:
-                    
-                    break;
+                int index = i+1;
+                switch (rand)
+                {
+                    case 1:
+                        if (index == 7) Visible(i);
+                        else Hidden(i);
+                        break;
+                    case 2:
+                        if (index == 3 || index == 4) Visible(i);
+                        else Hidden(i);
+                        break;
+                    case 3:
+                        if (index == 1 || index == 7 || index == 6) Visible(i);
+                        else Hidden(i);
+                        break;
+                    case 4:
+                        if (index == 1 || index == 3 || index == 4 || index == 6) Visible(i);
+                        else Hidden(i);
+                        break;
+                    case 5:
+                        if (index == 2 || index == 5) Hidden(i);
+                        else Visible(i);
+                        break;
+                    case 6:
+                        if (index == 7) Hidden(i);
+                        else Visible(i);
+                        break;
+                }
             }
+        }
+        private static void Hidden(int index)
+        {
+            ellipses[index].Visibility = Visibility.Hidden;
+        }
+        private static void Visible(int index)
+        {
+            ellipses[index].Visibility= Visibility.Visible;
         }
     }
 }

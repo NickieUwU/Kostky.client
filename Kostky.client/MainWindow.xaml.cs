@@ -22,15 +22,17 @@ namespace Kostky.client
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            Dice.Throw();
-        }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             Dice.MakeCube(canvas);
             Dice.MakeDots(canvas);
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Random random = new();
+            Dice.Throw(canvas, random);
         }
     }
 }
