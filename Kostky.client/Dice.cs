@@ -13,6 +13,7 @@ namespace Kostky.server
 {
     public static class Dice
     {
+        private static List<Ellipse> ellipses = new();
         public static void MakeCube(Canvas canvas)
         {
             Rectangle rectangle = new()
@@ -69,7 +70,25 @@ namespace Kostky.server
                         Canvas.SetTop(ellipse, 170);
                         break;
                 }
+                ellipses.Add(ellipse);
                 canvas.Children.Add(ellipse);
+            }
+        }
+        public static void Throw()
+        {
+            /*Ellipse el1 = ellipses[0];
+            Ellipse el2 = ellipses[1];
+            Ellipse el3 = ellipses[2];
+            Ellipse el4 = ellipses[3];
+            Ellipse el5 = ellipses[4];
+            Ellipse el6 = ellipses[5];
+            Ellipse el7 = ellipses[6];*/
+            Random random = new();
+            switch (random.Next(1, 6))
+            {
+                case 1:
+                    
+                    break;
             }
         }
     }

@@ -24,7 +24,7 @@ namespace Kostky.client
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-
+            Dice.Throw();
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
